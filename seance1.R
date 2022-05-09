@@ -1,7 +1,7 @@
 library(randtoolbox)
 source('generateurs.R')
 
-seed <- 13173
+seed <- 13132
 Nsimu <- 100
 Nrepet <- 1
 
@@ -22,16 +22,17 @@ hist(rd[,1],xlab='',main='Randu')
 
 # 2.2
 
+Nsimu <- 100
 vn <- VonNeumann(Nsimu,10,seed)
 mt <- MersenneTwister(Nsimu,10,seed)
 st <- StandardMinimal(Nsimu,10,seed)
 rd <- Randu(Nsimu,10,seed) 
 
 par(mfrow=c(1,4))
-plot(mt[1:(Nsimu-1),1],mt[2:Nsimu,1],xlab='MT(i)', ylab='MT(i+1)', main='Mersenne Twister', xlim=c(0,1))
-plot(vn[1:(Nsimu-1),1],vn[2:Nsimu,1],xlab='VN(i)', ylab='VN(i+1)', main='Von Neumann', xlim=c(0,1))
-plot(st[1:(Nsimu-1),1],st[2:Nsimu,1],xlab='ST(i)', ylab='ST(i+1)', main='Standard Minimal', xlim=c(0,1))
-plot(rd[1:(Nsimu-1),1],rd[2:Nsimu,1],xlab='RD(i)', ylab='RD(i+1)', main='Randu', xlim=c(0,1))
+plot(mt[1:(Nsimu-1),1],mt[2:Nsimu,1],xlab='MT(i)', ylab='MT(i+1)', main='Mersenne Twister')
+plot(vn[1:(Nsimu-1),1],vn[2:Nsimu,1],xlab='VN(i)', ylab='VN(i+1)', main='Von Neumann')
+plot(st[1:(Nsimu-1),1],st[2:Nsimu,1],xlab='ST(i)', ylab='ST(i+1)', main='Standard Minimal')
+plot(rd[1:(Nsimu-1),1],rd[2:Nsimu,1],xlab='RD(i)', ylab='RD(i+1)', main='Randu')
 
 # 3
 
