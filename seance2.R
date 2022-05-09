@@ -25,10 +25,29 @@ plot(file$counts$x, file$counts$y, type='l', xlab='t', ylab='count', main='En at
 cat("Nb client moyen 30/20 ", mean(file$counts$y), "\n")
 cat("Temps attente moyen 30/20 ", mean(TempsAtt(file$arrivees, file$departs)), "\n")
 
+# Mêmes résultats avec MM2
+
+file <- FileMM(10, 20, 2, 12)
+plot(file$counts$x, file$counts$y, type='l', xlab='t', ylab='count', main='En attente 10/20/2')
+cat("Nb client moyen 10/20/2 ", mean(file$counts$y), "\n")
+cat("Temps attente moyen 10/20/2 ", mean(TempsAtt(file$arrivees, file$departs)), "\n")
+
+file <- FileMM(14, 20, 2, 12)
+plot(file$counts$x, file$counts$y, type='l', xlab='t', ylab='count', main='En attente 14/20/2')
+cat("Nb client moyen 14/20/2 ", mean(file$counts$y), "\n")
+cat("Temps attente moyen 14/20/2 ", mean(TempsAtt(file$arrivees, file$departs)), "\n")
+
 file <- FileMM(20, 20, 2, 12)
 plot(file$counts$x, file$counts$y, type='l', xlab='t', ylab='count', main='En attente 20/20/2')
 cat("Nb client moyen 20/20/2 ", mean(file$counts$y), "\n")
 cat("Temps attente moyen 20/20/2 ", mean(TempsAtt(file$arrivees, file$departs)), "\n")
+
+file <- FileMM1(30, 20, 2, 12)
+plot(file$counts$x, file$counts$y, type='l', xlab='t', ylab='count', main='En attente 30/20/2')
+cat("Nb client moyen 30/20/2 ", mean(file$counts$y), "\n")
+cat("Temps attente moyen 30/20/2 ", mean(TempsAtt(file$arrivees, file$departs)), "\n")
+
+# Tests intéressants avec n=2 et n=4
 
 file <- FileMM(40, 20, 2, 12)
 plot(file$counts$x, file$counts$y, type='l', xlab='t', ylab='count', main='En attente 40/20/2')
@@ -44,3 +63,8 @@ file <- FileMM(80, 20, 4, 12)
 plot(file$counts$x, file$counts$y, type='l', xlab='t', ylab='count', main='En attente 80/20/4')
 cat("Nb client moyen 80/20/4 ", mean(file$counts$y), "\n")
 cat("Temps attente moyen 80/20/4 ", mean(TempsAtt(file$arrivees, file$departs)), "\n")
+
+file <- FileMM(160, 20, 4, 12)
+plot(file$counts$x, file$counts$y, type='l', xlab='t', ylab='count', main='En attente 160/20/4')
+cat("Nb client moyen 160/20/4 ", mean(file$counts$y), "\n")
+cat("Temps attente moyen 160/20/4 ", mean(TempsAtt(file$arrivees, file$departs)), "\n")
